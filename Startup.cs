@@ -1,4 +1,5 @@
 using Intex_Remix.Data;
+using Intex_Remix.Models;
 using Intex_Remix.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -39,9 +40,18 @@ namespace Intex_Remix
                 .AddDefaultUI();
             services.AddControllersWithViews();
 
-            // requires
-            // using Microsoft.AspNetCore.Identity.UI.Services;
-            // using WebPWrecover.Services;
+            services.AddControllersWithViews();
+
+            services.AddDbContext<MummyDBContext>(options =>
+            {
+                options.UseSqlServer(Helpers.GetRDSConnectionString());
+            });
+
+            services.AddScoped<IBurialRepository, EFBurialRepository>();
+
+            services.AddMvc();
+
+            //FOR EMAIL AUTHENTICATION SERVICE
             services.AddTransient<EmailSender, EmailSender>();
             services.Configure<AuthMessageSenderOptions>(Configuration);
 
@@ -109,7 +119,17 @@ namespace Intex_Remix
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+
+                endpoints.MapControllerRoute("pageNum",
+                    "Home/DesertShaftBurials/{pageNum:int}",
+                    new { Controller = "Home", action = "DesertShaftBurials" });
+
+                endpoints.MapControllerRoute("pageNumCat",
+                    "Home/DesertShaftBurials/{id}/{pageNum:int}",
+                    new { Controller = "Home", action = "DesertShaftBurials" });
             });
+
+
         }
     }
 }

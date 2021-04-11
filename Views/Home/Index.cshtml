@@ -2,7 +2,58 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<body>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Fag el-Gamous</h1>
+            <p class="lead text-muted">
+                Producing over 1000 mummies and other historical artifacts, this Egyptian cemetery has
+                captured academic interest and international praise. BYU Professors, Paul Evans and Kerry Muhlestein,
+                continue to lead the excavation. With this online tool you can join the adventure and explore the wonders of Fag el-Gamous.
+                Click below to view entries for Desert Shaft Burials or Tomb Burials.
+            </p>
+
+            <a asp-action="DesertShaftBurials" class="btn btn-primary my-2" role="button">Desert Shaft Burials</a>
+            <a asp-action="TombBurials" class="btn btn-primary my-2" role="button">Tomb Burials</a>
+
+        </div>
+    </section>
+
+    <main role="main" class="container">
+        <div class="row">
+            <div>
+                <div>
+                    <h2 class="blog-post-title">About the Project</h2>
+                    <p class="blog-post-meta">April 14, 2021 — IS Group 2-5</p>
+
+                    <hr>
+                    <h4>Project Background</h4>
+                    <p>Fag el-Gamous (which means Way of the Water Buffalo) is a large and important cemetery in Egypt that has been under archeological investigation (primarily by BYU researchers) for over 25 years. The excavation has garnered international attention because of the interesting insights gained by studying the Fag el-Gamous mummies. Detailed background information on this dig site can be found in the academic article <a href="https://www-sciencedirect-com.erl.lib.byu.edu/science/article/pii/S2352409X15000188">“Rethinking burial dates at a Graeco-Roman Cemetery: Fag el-Gamous, Fayoum, Egypt.”</a></p>
+                    <blockquote>
+                        <p>
+                            During multiple years of study, researchers have excavated more than 1,000 mummies and collected data in field notes, spreadsheets, and simple databases about each mummy’s location, physical orientation in the ground, burial depth, hair color, wrapping (including information about the textiles used), gender, age, bone (including skull and teeth) dimensions, items accompanying the mummy, and more. And, of course, there are many, many photographs. Offsite, researchers have performed a variety of analyses on the items excavated including carbon dating, DNA sequencing, and others.
+                        </p>
+                    </blockquote>
+                    <p>The “dig” is organized using a grid system where a square is defined by the coordinates North (N), East (E), South (S), and West (W) of an origin. It is common for two numbers to designate the distance from the origin in a direction (e.g., N 190/200 or E 40/50). Those squares are then subdivided into the Northwest (NW), Northeast (NE), Southeast (SE) or Southwest (SW) quadrant (section) of the square. An example burial location is: N 190/200 E 40/50 SE. Because many mummies (usually 40 or more) are found in each location, a number is assigned (e.g., N 190/200 E 40/50 SE #9) to uniquely identify the burial.</p>
+                    <h4>Purpose of Project</h4>
+                    <p>
+                        To accomodate for growing size and scope of the excavation and its associating data, a framework needed to be implemented to organize and display the data. Ultimately, this project accomplished three things:
+                    </p>
+                    <li>
+                        Website was developed to organize the data. This information can be shared with researchers and interested members of the public around the world.
+                    </li>
+                    <li>
+                        Research team allowed to view, filter, and query this data in many ways so they can answer a variety of academic research questions. Access to sensitive information protected by security groups (admin, researcher, general public).
+                    </li>
+                    <li>Research team enabled to enter data while at the dig site. The site recently gained access to 3G cellular data speeds and the ability to enter field notes and other data directly to the database is desirable.</li>
+                    <br />
+                    <p>Something more about this...</p>
+                </div>
+
+
+            </div>
+
+        </div><!-- /.row -->
+
+    </main><!-- /.container -->
+</body>

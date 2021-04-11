@@ -1,0 +1,107 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Detailed Information";
+    string ImgSrc = $"{@Model.BurialLocationNs}+{@Model.LowPairNs}+{@Model.BurialLocationEw}+{@Model.LowPairEw}+{@Model.BurialSubplot}+%23{@Model.BurialNumber}.JPG";
+}
+
+@model Main
+
+<h1>@ViewData["Title"]</h1>
+
+<br />
+
+<div class="container border rounded p-2">
+    <p><b>Mummy ID:</b> @Model.BurialId</p>
+    <br />
+    <div class="row">
+
+        <!--Dig info-->
+        <div id="col1" class="col-6">
+            <h4>Dig Info</h4>
+            <span>Location: @Model.LowPairNs/@Model.HighPairNs @Model.BurialLocationNs @Model.LowPairEw/@Model.HighPairEw @Model.BurialLocationEw @Model.BurialSubplot</span><br />
+            <span>Burial: #@Model.BurialNumber</span><br />
+            <span>Depth: @Model.BurialDepth</span><br />
+            <span>
+                Date Found:
+                @if (Model.MonthFound == null && Model.DayFound == null && Model.YearFound == null)
+                {
+                    <span>Unrecorded</span>
+                }
+                else
+                {
+                    <span>@Model.MonthFound @Model.DayFound @Model.YearFound</span>
+                }
+            </span><br />
+            <span>Artifacts: @Model.ArtifactsDescription</span><br />
+            <span>Direction of Head: @Model.HeadDirection</span><br />
+
+            <!--dynamically sourced image-->
+            <img src="https://mummyimages.s3.amazonaws.com/Photos/@ImgSrc" alt="@Model.BurialId" width="480" />
+            @*<img src="https://mummyimages.s3.amazonaws.com/Photos/N+190+E+30+SE+%2350.JPG" alt="@Model.BurialId" />*@
+        </div>
+
+        <!--Body info-->
+        <div id="col-2" class="col-6">
+            <h4>Body Info</h4>
+
+            <span>Burial Number: @Model.BurialNumber</span><br />
+            <span>Determined Gender (Gender Body Col): @Model.GenderBodyCol</span><br />
+            <span>Gender GE: @Model.GenderGe</span><br />
+            <span>Hair Color: @Model.HairColor</span><br />
+            <span>Preservation Index: @Model.PreservationIndex</span><br />
+            <span>Osteophytosis: @Model.Osteophytosis</span><br />
+            <br />
+            <span>Bone Info:</span><br />
+            <span>Basilar Suture: @Model.BasilarSuture</span><br />
+            <span>Ventral Arc: @Model.VentralArc</span><br />
+            <span>Subpubic Angle: @Model.SubpubicAngle</span><br />
+            <span>Sciatic Notch: @Model.SciaticNotch</span><br />
+            <span>Pubic Bone: @Model.PubicBone</span><br />
+            <span>Preaur Sulcus: @Model.PreaurSulcus</span><br />
+            <span>Medial IP Ramus: @Model.MedialIpRamus</span><br />
+            <span>Dorsal Pitting: @Model.DorsalPitting</span><br />
+            <span>Femur Head: @Model.FemurHead</span><br />
+            <span>Femur Diameter: @Model.FemurDiameter</span><br />
+            <span>Femur Length: @Model.FemurLength</span><br />
+        </div>
+    </div>
+
+    <br /><br />
+
+    <!--Footer for notes-->
+          <div class="row">
+              <div class="col-9">
+                  <div>
+                      <h4>Archaeologist's Notes</h4>
+                      <b>Burial Situation:</b>
+                      <span>@Model.BurialSituation</span>
+                      <br />
+
+                      <b>Description of Samples Taken:</b>
+                      <span>@Model.DescriptionOfTaken</span>
+                      <br />
+
+                      <b>Pathology Anomalies:</b>
+                      <span>@Model.PathologyAnomalies</span>
+                  </div>
+              </div>
+
+              @if (User.IsInRole("Researcher") || User.IsInRole("Admin"))
+              {
+                  <div class="col-3">
+                      <!--Set buttons on bottom of container for edit & delete functionality-->
+                      <div style="position:absolute; bottom:0px;">
+                          <button>
+                              @Html.ActionLink("EditDesertBurial", "EditDesertBurial", new { id = Model.BurialId }, new { @class = "btn btn-outline-dark" })
+                          </button>
+                          <button>
+                              @Html.ActionLink("Delete", "Delete", new { id = Model.BurialId }, new { @class = "btn btn-danger" })
+                          </button>
+                      </div>
+                  </div>
+              }
+
+          </div>
+</div>

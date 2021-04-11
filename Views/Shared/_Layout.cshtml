@@ -42,27 +42,19 @@
                             }
                         </li>
                         <li class="nav-item">
-
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                                if (User.IsInRole("Admin"))
-                                {
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Admin">Admin</a>
-                                }
-                            }
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="DesertShaftBurials">Desert Shaft Burials</a>
                         </li>
                         <li class="nav-item">
                             @if (User.Identity.IsAuthenticated)
                             {
-                                if (User.IsInRole("Researcher"))
+                                if (User.IsInRole("Researcher") || User.IsInRole("Admin"))
                                 {
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Researcher">Researcher</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AddDesertBurial">Add Desert Burial</a>
                                 }
                             }
-
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GeneralPublic">General Public</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TombBurials">Tomb Burials</a>
                         </li>
                     </ul>
                 </div>
