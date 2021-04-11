@@ -66,12 +66,26 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
+    <br /><br /><br />
+    <footer class="border-top text-center p-3" style="position:absolute; bottom:0; width:100%;">
         <div class="container">
-            &copy; 2021 - Intex_Remix - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <div class="col-6 text-right">
+                    <a asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+                </div>
+                <div class="col-6 text-left">
+                    <a href="https://www-sciencedirect-com.erl.lib.byu.edu/science/article/pii/S2352409X15000188">Learn More</a>
+                </div>
+            </div>
+            <br />
+            &copy; 2021 — BYU Egypt Excavation Project — Fag el-Gamous Cemetery Database
         </div>
     </footer>
+    @*<footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - Intex_Remix - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
