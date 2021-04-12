@@ -36,8 +36,17 @@
             </span><br />
             <span>Artifacts: @Model.ArtifactsDescription</span><br />
             <span>Direction of Head: @Model.HeadDirection</span><br />
-
+            <br />
+            <span>South to Head: @Model.SouthToHead</span><br />
+            <span>South to Feet: @Model.SouthToFeet</span><br />
+            <br />
+            <span>West to Head: @Model.WestToHead</span><br />
+            <span>West to Feet: @Model.WestToFeet</span><br />
+            <br />
+            <span>Length of Remains: @Model.LengthOfRemains</span><br />
+            <br />
             <!--dynamically sourced image-->
+            <span>Image (If Available):</span><br />
             <img src="https://mummyimages.s3.amazonaws.com/Photos/@ImgSrc" alt="@Model.BurialId" width="480" />
             @*<img src="https://mummyimages.s3.amazonaws.com/Photos/N+190+E+30+SE+%2350.JPG" alt="@Model.BurialId" />*@
         </div>
@@ -46,16 +55,19 @@
         <div id="col-2" class="col-6">
             <h4>Body Info</h4>
 
+            <span><b>General Info:</b></span><br />
             <span>Burial Number: @Model.BurialNumber</span><br />
+            <span>Sample Number: @Model.SampleNumber</span>
             <span>Determined Gender (Gender Body Col): @Model.GenderBodyCol</span><br />
             <span>Gender GE: @Model.GenderGe</span><br />
-            <span>Hair Color: @Model.HairColor</span><br />
             <span>Preservation Index: @Model.PreservationIndex</span><br />
+            <span>Estimate Age: @Model.EstimateAge</span><br />
             <span>Osteophytosis: @Model.Osteophytosis</span><br />
             <br />
-            <span>Bone Info:</span><br />
+            <span><b>Bone Info:</b></span><br />
             <span>Basilar Suture: @Model.BasilarSuture</span><br />
             <span>Ventral Arc: @Model.VentralArc</span><br />
+            <span>Pubic Symphosis: @Model.PubicSymphysis</span><br />
             <span>Subpubic Angle: @Model.SubpubicAngle</span><br />
             <span>Sciatic Notch: @Model.SciaticNotch</span><br />
             <span>Pubic Bone: @Model.PubicBone</span><br />
@@ -65,6 +77,32 @@
             <span>Femur Head: @Model.FemurHead</span><br />
             <span>Femur Diameter: @Model.FemurDiameter</span><br />
             <span>Femur Length: @Model.FemurLength</span><br />
+            <span>Tibia Length: @Model.TibiaLength</span><br />
+            <span>Robust: @Model.Robust</span><br />
+            <span>Supraorbital Ridges: @Model.SupraorbitalRidges</span><br />
+            <span>Orbit Edge: @Model.OrbitEdge</span><br />
+            <span>Parietal Bossing: @Model.ParietalBossing</span><br />
+            <span>Gonian: @Model.Gonian</span><br />
+            <span>Nuchal Crest: @Model.NuchalCrest</span><br />
+            <span>Zygomatic Crest: @Model.ZygomaticCrest</span><br />
+            <br />
+            <span><b>Skull Info:</b></span><br />
+            <span>Hair Color: @Model.HairColor</span><br />
+            <span>Cranial Suture: @Model.CranialSuture</span><br />
+            <span>Maximum Cranial Length: @Model.MaximumCranialLength</span><br />
+            <span>Maximum Cranial Breadth: @Model.MaximumNasalBreadth</span><br />
+            <span>Basion Bregma Height: @Model.BasionBregmaHeight</span><br />
+            <span>Basion Nasion: @Model.BasionNasion</span><br />
+            <span>Basion Prosthion Length: @Model.BasionProsthionLength</span><br />
+            <span>Bizygomatic Diameter: @Model.BizygomaticDiameter</span><br />
+            <span>Nasion Prosthion: @Model.NasionProsthion</span><br />
+            <span>Maximum Nasal Breadth: @Model.MaximumNasalBreadth</span><br />
+            <span>Interorbital Breadth: @Model.InterorbitalBreadth</span><br />
+            <br />
+            <span><b>Dental Info:</b></span><br />
+            <span>Tooth Attrition: @Model.ToothAttrition</span><br />
+            <span>Tooth Eruption: @Model.ToothEruption</span><br />
+
         </div>
     </div>
 
