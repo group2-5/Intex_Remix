@@ -108,6 +108,7 @@
                             }<br />
                         </td>
                         <td class="align-middle">
+                            <!--small form to pass the burial id so that the full data can be accessed on the other page-->
                             <form method="post" asp-action="DesertShaftBurialFull">
                                 <input id="BurialId" name="BurialId" type="hidden" value="@b.BurialId" />
 
@@ -115,8 +116,6 @@
                             </form>
                         </td>
                     </tr>
-                    <!--small form to pass the burial id so that the full data can be accessed on the other page-->
-
                 </tbody>
             }
         </table>
@@ -136,7 +135,7 @@
 </div>
 <!--paginated links ALTERNATE PAGINATION STYLING FORMAT, NOT DONE
 <div class="pagination text-center justify-content-center"
-     page-info="@Model.PageNumberingInfo"
+     page-info="Model.PageNumberingInfo"
      page-action="DesertShaftBurials"
      page-classes-enabled="true"
      page-class="page-item active page-link"

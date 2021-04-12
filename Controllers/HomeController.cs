@@ -65,7 +65,7 @@ namespace Intex_Remix.Controllers
             ViewBag.Filters = filters;
             ViewBag.HairColors = _repository.Burials.Select(b => b.HairColor).Distinct().ToList();
             ViewBag.Genders = _repository.Burials.Select(b => b.GenderBodyCol).Distinct().ToList();
-            ViewBag.Locations = _repository.Burials.Select(b => b.BurialId).Distinct().ToList();
+            ViewBag.Locations = _repository.Burials.Select(b => b.BurialId.Substring(0, b.BurialId.IndexOf(" #"))).Distinct().ToList();
             ViewBag.HeadDirections = _repository.Burials.Select(b => b.HeadDirection).Distinct().ToList();
             ViewBag.PreservationIndexes = _repository.Burials.Select(b => b.PreservationIndex).Distinct().ToList();
 
@@ -84,7 +84,7 @@ namespace Intex_Remix.Controllers
             }
             if (filters.HasLocation)
             {
-                query = query.Where(b => b.BurialId == filters.LocationKey);
+                query = query.Where(b => b.BurialId.Substring(0, b.BurialId.IndexOf(" #")) == filters.LocationKey);
             }
             if (filters.HasHeadDirection)
             {
