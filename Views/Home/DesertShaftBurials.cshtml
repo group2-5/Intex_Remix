@@ -58,9 +58,10 @@
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-outline-info">Filter</button>
-
-                <a asp-action="DesertShaftBurials" asp-route-id="" class="btn btn-outline-info">Clear</a>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-outline-info">Filter</button>
+                    <a asp-action="DesertShaftBurials" asp-route-id="" class="btn btn-outline-info">Clear</a>
+                </div>
 
             </form>
 
@@ -128,12 +129,12 @@
 <br />
 
 <!--paginated links-->
-<div page-info="@Model.PageNumberingInfo"
+<div class="text-center"
+     page-info="@Model.PageNumberingInfo"
      page-action="DesertShaftBurials"
      page-classes-enabled="true"
      page-class="btn"
-     page-class-normal="btn-outline-secondary"
-     page-class-selected="btn-primary">
+     page-class-normal="btn-outline-info"
+     page-class-selected="btn-info">
 </div>
 
-@*      page-url-teamname="@Model.HairColor" *@
