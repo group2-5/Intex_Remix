@@ -9,9 +9,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BYU Egypt Excavation Project</a>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand nav-link text-light font-weight-bold" asp-area="" asp-controller="Home" asp-action="Index">BYU Egypt Excavation Project</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,14 +20,14 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
                             @if (User.Identity.IsAuthenticated)
                             {
                                 if (User.IsInRole("Admin"))
                                 {
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Role" asp-action="Index">Roles</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Role" asp-action="Index">Roles</a>
                                 }
                             }
                         </li>
@@ -37,24 +37,24 @@
                             {
                                 if (User.IsInRole("Admin"))
                                 {
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Role" asp-action="UserIndex">Users</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Role" asp-action="UserIndex">Users</a>
                                 }
                             }
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="DesertShaftBurials">Desert Shaft Burials</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="DesertShaftBurials">Desert Shaft Burials</a>
                         </li>
                         <li class="nav-item">
                             @if (User.Identity.IsAuthenticated)
                             {
                                 if (User.IsInRole("Researcher") || User.IsInRole("Admin"))
                                 {
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AddDesertBurial">Add Desert Burial</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="AddDesertBurial">Add Desert Burial</a>
                                 }
                             }
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TombBurials">Tomb Burials</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="TombBurials">Tomb Burials</a>
                         </li>
                     </ul>
                 </div>
