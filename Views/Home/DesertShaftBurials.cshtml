@@ -79,9 +79,10 @@
                     <th>Explore:</th>
                 </tr>
             </thead>
-            @foreach (var b in Model.Burials)
-            {
-                <tbody>
+            <tbody>
+                @foreach (var b in Model.Burials)
+                {
+
                     <tr>
                         <td class="align-middle">@b.LowPairNs/@b.HighPairNs @b.BurialLocationNs @b.LowPairEw/@b.HighPairEw @b.BurialLocationEw @b.BurialSubplot</td>
                         <td class="align-middle">@b.BurialNumber</td>
@@ -116,9 +117,9 @@
                             </form>
                         </td>
                     </tr>
-                </tbody>
-            }
-        </table>
+                }
+            </tbody>
+            </table>
     </div>
 </div>
 
