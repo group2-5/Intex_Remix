@@ -21,7 +21,6 @@
                     <label>Hair Color:</label>
                     <select name="filter" class="form-control"
                             asp-items="@(new SelectList(ViewBag.HairColors, ViewBag.Filters.HairKey))">
-                        @*asp-items="@(new SelectList(ViewBag.HairColors, "BurialId", "HairColor", ViewBag.Filters.HairKey))">*@
                         <option value="all">All</option>
                     </select>
                 </div>
