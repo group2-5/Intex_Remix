@@ -197,7 +197,7 @@ namespace Intex_Remix.Controllers
         }
         //post methods of the above actions also needed
 
-        [Authorize(Roles = "Researcher,Admin")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(string id)
         {
             Main record = _repository.GetRecordByID(id);

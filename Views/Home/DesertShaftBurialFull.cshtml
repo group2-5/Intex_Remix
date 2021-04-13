@@ -113,37 +113,49 @@
     <br /><br />
 
     <!--Footer for notes-->
-    <div class="row">
-        <div class="col-9">
-            <div>
-                <h4>Archaeologist's Notes</h4>
-                <b>Burial Situation:</b>
-                <span>@Model.BurialSituation</span>
-                <br />
+          <div class="row">
+              <div class="col-9">
+                  <div>
+                      <h4>Archaeologist's Notes</h4>
+                      <b>Burial Situation:</b>
+                      <span>@Model.BurialSituation</span>
+                      <br />
 
-                <b>Description of Samples Taken:</b>
-                <span>@Model.DescriptionOfTaken</span>
-                <br />
+                      <b>Description of Samples Taken:</b>
+                      <span>@Model.DescriptionOfTaken</span>
+                      <br />
 
-                <b>Pathology Anomalies:</b>
-                <span>@Model.PathologyAnomalies</span>
-            </div>
-        </div>
+                      <b>Pathology Anomalies:</b>
+                      <span>@Model.PathologyAnomalies</span>
+                  </div>
+              </div>
 
-        @if (User.IsInRole("Researcher") || User.IsInRole("Admin"))
-        {
-            <div class="col-3">
-                <!--Set buttons on bottom of container for edit & delete functionality-->
-                <div style="position:absolute; bottom:0px;">
-                    <button>
-                        @Html.ActionLink("EditDesertBurial", "EditDesertBurial", new { id = Model.BurialId }, new { @class = "btn btn-outline-dark" })
-                    </button>
-                    <button>
-                        @Html.ActionLink("Delete", "Delete", new { id = Model.BurialId }, new { @class = "btn btn-danger" })
-                    </button>
-                </div>
-            </div>
-        }
+              @if (User.IsInRole("Researcher"))
+              {
+                  <div class="col-3">
+                      <!--Set buttons on bottom of container for edit & delete functionality-->
+                      <div style="position:absolute; bottom:0px;">
+                          <button>
+                              @Html.ActionLink("EditDesertBurial", "EditDesertBurial", new { id = Model.BurialId }, new { @class = "btn btn-outline-dark" })
+                          </button>
+                      </div>
+                  </div>
+              }
 
-    </div>
+              @if (User.IsInRole("Admin"))
+              {
+                  <div class="col-3">
+                      <!--Set buttons on bottom of container for edit & delete functionality-->
+                      <div style="position:absolute; bottom:0px;">
+                          <button>
+                              @Html.ActionLink("EditDesertBurial", "EditDesertBurial", new { id = Model.BurialId }, new { @class = "btn btn-outline-dark" })
+                          </button>
+                          <button>
+                              @Html.ActionLink("Delete", "Delete", new { id = Model.BurialId }, new { @class = "btn btn-danger" })
+                          </button>
+                      </div>
+                  </div>
+              }
+
+          </div>
 </div>
