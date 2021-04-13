@@ -204,7 +204,7 @@ namespace Intex_Remix.Controllers
             _repository.DeleteRecord(id);
             _repository.Save();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("DesertShaftBurials");
         }
 
 
