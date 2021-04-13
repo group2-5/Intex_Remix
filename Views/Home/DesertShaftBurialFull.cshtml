@@ -15,147 +15,147 @@
     <h1>@ViewData["Title"]</h1>
 </div>
 
+
 <div class="container border rounded p-2">
-    
     <p><b>Mummy ID:</b> @Model.BurialId</p>
     <br />
     <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <img src="~/ShovelICON.svg" width="101" />
+                    <h4>Dig Info</h4>
+                    <hr />
+                    <span><b>Location Info:</b></span><br />
+                    <span>Location: @Model.LowPairNs/@Model.HighPairNs @Model.BurialLocationNs @Model.LowPairEw/@Model.HighPairEw @Model.BurialLocationEw @Model.BurialSubplot</span><br />
+                    <span>Burial: #@Model.BurialNumber</span><br />
+                    <span>Depth: @Model.BurialDepth</span><br />
+                    <span>
+                        Date Found:
+                        @if (Model.MonthFound == null && Model.DayFound == null && Model.YearFound == null)
+                        {
+                            <span>Unrecorded</span>
+                        }
+                        else
+                        {
+                            <span>@Model.MonthFound @Model.DayFound @Model.YearFound</span>
+                        }
+                    </span><br />
+                    <span>Artifacts: @Model.ArtifactsDescription</span><br />
+                    <span>Direction of Head: @Model.HeadDirection</span><br />
+                    <br />
+                    <span><b>Other Info:</b></span><br />
+                    <span>South to Head: @Model.SouthToHead</span><br />
+                    <span>South to Feet: @Model.SouthToFeet</span><br />
+                    <span>West to Head: @Model.WestToHead</span><br />
+                    <span>West to Feet: @Model.WestToFeet</span><br />
+                    <span>Length of Remains: @Model.LengthOfRemains</span><br />
+                    <br />
+                    <!--dynamically sourced image-->
+                    <span><b>Image (If Available):</b></span><br />
+                    <img src="https://mummyimages.s3.amazonaws.com/Photos/@ImgSrc" alt="@Model.BurialId" width="480" />
+                    @*<img src="https://mummyimages.s3.amazonaws.com/Photos/N+190+E+30+SE+%2350.JPG" alt="@Model.BurialId" />*@
+                </div>
+                <div class="col-sm">
+                    <img src="~/BoneICON.svg" width="105"/>
+                    <h4>Body Info</h4>
+                    <hr />
 
-        <!--Dig info-->
-        <div id="col1" class="col-6">
-            <h4>Dig Info</h4>
-            <span>Location: @Model.LowPairNs/@Model.HighPairNs @Model.BurialLocationNs @Model.LowPairEw/@Model.HighPairEw @Model.BurialLocationEw @Model.BurialSubplot</span><br />
-            <span>Burial: #@Model.BurialNumber</span><br />
-            <span>Depth: @Model.BurialDepth</span><br />
-            <span>
-                Date Found:
-                @if (Model.MonthFound == null && Model.DayFound == null && Model.YearFound == null)
-                {
-                    <span>Unrecorded</span>
-                }
-                else
-                {
-                    <span>@Model.MonthFound @Model.DayFound @Model.YearFound</span>
-                }
-            </span><br />
-            <span>Artifacts: @Model.ArtifactsDescription</span><br />
-            <span>Direction of Head: @Model.HeadDirection</span><br />
-            <br />
-            <span>South to Head: @Model.SouthToHead</span><br />
-            <span>South to Feet: @Model.SouthToFeet</span><br />
-            <br />
-            <span>West to Head: @Model.WestToHead</span><br />
-            <span>West to Feet: @Model.WestToFeet</span><br />
-            <br />
-            <span>Length of Remains: @Model.LengthOfRemains</span><br />
-            <br />
-            <!--dynamically sourced image-->
-            <span>Image (If Available):</span><br />
-            <img src="https://mummyimages.s3.amazonaws.com/Photos/@ImgSrc" alt="@Model.BurialId" width="480" />
-            @*<img src="https://mummyimages.s3.amazonaws.com/Photos/N+190+E+30+SE+%2350.JPG" alt="@Model.BurialId" />*@
-        </div>
+                    <span><b>General Info:</b></span><br />
+                    <span>Burial Number: @Model.BurialNumber</span><br />
+                    <span>Sample Number: @Model.SampleNumber</span><br />
+                    <span>Determined Gender (Gender Body Col): @Model.GenderBodyCol</span><br />
+                    <span>Gender GE: @Model.GenderGe</span><br />
+                    <span>Preservation Index: @Model.PreservationIndex</span><br />
+                    <span>Estimate Age: @Model.EstimateAge</span><br />
+                    <span>Osteophytosis: @Model.Osteophytosis</span><br />
+                    <br />
+                    <span><b>Bone Info:</b></span><br />
+                    <span>Basilar Suture: @Model.BasilarSuture</span><br />
+                    <span>Ventral Arc: @Model.VentralArc</span><br />
+                    <span>Pubic Symphosis: @Model.PubicSymphysis</span><br />
+                    <span>Subpubic Angle: @Model.SubpubicAngle</span><br />
+                    <span>Sciatic Notch: @Model.SciaticNotch</span><br />
+                    <span>Pubic Bone: @Model.PubicBone</span><br />
+                    <span>Preaur Sulcus: @Model.PreaurSulcus</span><br />
+                    <span>Medial IP Ramus: @Model.MedialIpRamus</span><br />
+                    <span>Dorsal Pitting: @Model.DorsalPitting</span><br />
+                    <span>Femur Head: @Model.FemurHead</span><br />
+                    <span>Femur Diameter: @Model.FemurDiameter</span><br />
+                    <span>Femur Length: @Model.FemurLength</span><br />
+                    <span>Tibia Length: @Model.TibiaLength</span><br />
+                    <span>Robust: @Model.Robust</span><br />
+                    <span>Supraorbital Ridges: @Model.SupraorbitalRidges</span><br />
+                    <span>Orbit Edge: @Model.OrbitEdge</span><br />
+                    <span>Parietal Bossing: @Model.ParietalBossing</span><br />
+                    <span>Gonian: @Model.Gonian</span><br />
+                    <span>Nuchal Crest: @Model.NuchalCrest</span><br />
+                    <span>Zygomatic Crest: @Model.ZygomaticCrest</span><br />
+                    <br />
+                    <span><b>Skull Info:</b></span><br />
+                    <span>Hair Color: @Model.HairColor</span><br />
+                    <span>Cranial Suture: @Model.CranialSuture</span><br />
+                    <span>Maximum Cranial Length: @Model.MaximumCranialLength</span><br />
+                    <span>Maximum Cranial Breadth: @Model.MaximumNasalBreadth</span><br />
+                    <span>Basion Bregma Height: @Model.BasionBregmaHeight</span><br />
+                    <span>Basion Nasion: @Model.BasionNasion</span><br />
+                    <span>Basion Prosthion Length: @Model.BasionProsthionLength</span><br />
+                    <span>Bizygomatic Diameter: @Model.BizygomaticDiameter</span><br />
+                    <span>Nasion Prosthion: @Model.NasionProsthion</span><br />
+                    <span>Maximum Nasal Breadth: @Model.MaximumNasalBreadth</span><br />
+                    <span>Interorbital Breadth: @Model.InterorbitalBreadth</span><br />
+                    <br />
+                    <span><b>Dental Info:</b></span><br />
+                    <span>Tooth Attrition: @Model.ToothAttrition</span><br />
+                    <span>Tooth Eruption: @Model.ToothEruption</span><br />
+                </div>
+                <div class="col-sm">
+                    <div class="col-sm">
+                        <div>
+                            <img src="~/ClipboardICON.svg" width="100"/>
+                            <h4>Archaeologist's Notes</h4>
+                            <hr />
+                            <b>Burial Situation:</b>
+                            <span>@Model.BurialSituation</span>
+                            <br />
 
-        <!--Body info-->
-        <div id="col-2" class="col-6">
-            <h4>Body Info</h4>
+                            <b>Description of Samples Taken:</b>
+                            <span>@Model.DescriptionOfTaken</span>
+                            <br />
 
-            <span><b>General Info:</b></span><br />
-            <span>Burial Number: @Model.BurialNumber</span><br />
-            <span>Sample Number: @Model.SampleNumber</span>
-            <span>Determined Gender (Gender Body Col): @Model.GenderBodyCol</span><br />
-            <span>Gender GE: @Model.GenderGe</span><br />
-            <span>Preservation Index: @Model.PreservationIndex</span><br />
-            <span>Estimate Age: @Model.EstimateAge</span><br />
-            <span>Osteophytosis: @Model.Osteophytosis</span><br />
-            <br />
-            <span><b>Bone Info:</b></span><br />
-            <span>Basilar Suture: @Model.BasilarSuture</span><br />
-            <span>Ventral Arc: @Model.VentralArc</span><br />
-            <span>Pubic Symphosis: @Model.PubicSymphysis</span><br />
-            <span>Subpubic Angle: @Model.SubpubicAngle</span><br />
-            <span>Sciatic Notch: @Model.SciaticNotch</span><br />
-            <span>Pubic Bone: @Model.PubicBone</span><br />
-            <span>Preaur Sulcus: @Model.PreaurSulcus</span><br />
-            <span>Medial IP Ramus: @Model.MedialIpRamus</span><br />
-            <span>Dorsal Pitting: @Model.DorsalPitting</span><br />
-            <span>Femur Head: @Model.FemurHead</span><br />
-            <span>Femur Diameter: @Model.FemurDiameter</span><br />
-            <span>Femur Length: @Model.FemurLength</span><br />
-            <span>Tibia Length: @Model.TibiaLength</span><br />
-            <span>Robust: @Model.Robust</span><br />
-            <span>Supraorbital Ridges: @Model.SupraorbitalRidges</span><br />
-            <span>Orbit Edge: @Model.OrbitEdge</span><br />
-            <span>Parietal Bossing: @Model.ParietalBossing</span><br />
-            <span>Gonian: @Model.Gonian</span><br />
-            <span>Nuchal Crest: @Model.NuchalCrest</span><br />
-            <span>Zygomatic Crest: @Model.ZygomaticCrest</span><br />
-            <br />
-            <span><b>Skull Info:</b></span><br />
-            <span>Hair Color: @Model.HairColor</span><br />
-            <span>Cranial Suture: @Model.CranialSuture</span><br />
-            <span>Maximum Cranial Length: @Model.MaximumCranialLength</span><br />
-            <span>Maximum Cranial Breadth: @Model.MaximumNasalBreadth</span><br />
-            <span>Basion Bregma Height: @Model.BasionBregmaHeight</span><br />
-            <span>Basion Nasion: @Model.BasionNasion</span><br />
-            <span>Basion Prosthion Length: @Model.BasionProsthionLength</span><br />
-            <span>Bizygomatic Diameter: @Model.BizygomaticDiameter</span><br />
-            <span>Nasion Prosthion: @Model.NasionProsthion</span><br />
-            <span>Maximum Nasal Breadth: @Model.MaximumNasalBreadth</span><br />
-            <span>Interorbital Breadth: @Model.InterorbitalBreadth</span><br />
-            <br />
-            <span><b>Dental Info:</b></span><br />
-            <span>Tooth Attrition: @Model.ToothAttrition</span><br />
-            <span>Tooth Eruption: @Model.ToothEruption</span><br />
+                            <b>Pathology Anomalies:</b>
+                            <span>@Model.PathologyAnomalies</span>
+                        </div>
+                    </div>
+       
+                        @if (User.IsInRole("Researcher"))
+                        {
+                            <div class="position-absolute" style="left:0px; top:0px;">
+                                <!--Set buttons on bottom of container for edit & delete functionality-->
+                                <div>
+                                    <button>
+                                        @Html.ActionLink("EditDesertBurial", "EditDesertBurial", new { id = Model.BurialId }, new { @class = "btn btn-outline-dark" })
+                                    </button>
+                                </div>
+                            </div>
+                        }
 
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="position-absolute" style="left:0px; bottom:0px;">
+                                <!--Set buttons on bottom of container for edit & delete functionality-->
+                                <div>
+                                    <button>
+                                        @Html.ActionLink("EditDesertBurial", "EditDesertBurial", new { id = Model.BurialId }, new { @class = "btn btn-outline-dark" })
+                                    </button>
+                                    <button>
+                                        @Html.ActionLink("Delete", "Delete", new { id = Model.BurialId }, new { @class = "btn btn-danger" })
+                                    </button>
+                                </div>
+                            </div>
+                        }
+                   
+                </div>
+            </div>
         </div>
     </div>
-
-    <br /><br />
-
-    <!--Footer for notes-->
-          <div class="row">
-              <div class="col-9">
-                  <div>
-                      <h4>Archaeologist's Notes</h4>
-                      <b>Burial Situation:</b>
-                      <span>@Model.BurialSituation</span>
-                      <br />
-
-                      <b>Description of Samples Taken:</b>
-                      <span>@Model.DescriptionOfTaken</span>
-                      <br />
-
-                      <b>Pathology Anomalies:</b>
-                      <span>@Model.PathologyAnomalies</span>
-                  </div>
-              </div>
-
-              @if (User.IsInRole("Researcher"))
-              {
-                  <div class="col-3">
-                      <!--Set buttons on bottom of container for edit & delete functionality-->
-                      <div style="position:absolute; bottom:0px;">
-                          <button>
-                              @Html.ActionLink("EditDesertBurial", "EditDesertBurial", new { id = Model.BurialId }, new { @class = "btn btn-outline-dark" })
-                          </button>
-                      </div>
-                  </div>
-              }
-
-              @if (User.IsInRole("Admin"))
-              {
-                  <div class="col-3">
-                      <!--Set buttons on bottom of container for edit & delete functionality-->
-                      <div style="position:absolute; bottom:0px;">
-                          <button>
-                              @Html.ActionLink("EditDesertBurial", "EditDesertBurial", new { id = Model.BurialId }, new { @class = "btn btn-outline-dark" })
-                          </button>
-                          <button>
-                              @Html.ActionLink("Delete", "Delete", new { id = Model.BurialId }, new { @class = "btn btn-danger" })
-                          </button>
-                      </div>
-                  </div>
-              }
-
-          </div>
-</div>
